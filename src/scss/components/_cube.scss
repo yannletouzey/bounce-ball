@@ -1,0 +1,64 @@
+@use '../var';
+@use './animation';
+
+.cube {
+    width: var.$sizes-cube;
+    height: var.$sizes-cube;
+    position: absolute;
+    top: -3rem;
+    left: -3rem;
+    transform-style: preserve-3d;
+    animation: cubeSize 1.5s infinite linear;
+    &__left, &__right, &__front, &__back{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var.$background-face;
+        opacity: 0.5;
+        -webkit-box-shadow: inset 0px 0px 5px 0px #000000; 
+        box-shadow: inset 0px 0px 5px 0px #000000;
+        border: 0.5px solid #00000099;
+    }
+    &__top {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var.$background-face;
+        opacity: 0.5;
+        -webkit-box-shadow: inset 0px 0px 5px 0px #000000; 
+        box-shadow: inset 0px 0px 5px 0px #000000;
+        border: 0.5px solid #00000099;
+        transform: rotateX(90deg) translateZ(calc(var.$sizes-cube / 2));
+        &::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-image: radial-gradient(rgba(0, 0, 0, 0.8), #0000 50%);
+            animation: shadowBounce 1.5s infinite linear;
+        }
+    }
+    &__bottom {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var.$background-face;
+        -webkit-box-shadow: inset 0px 0px 5px 0px #000000; 
+        box-shadow: inset 0px 0px 5px 0px #000000;
+        border: 0.5px solid #00000099;
+        opacity: 1;
+        animation: moveBottom 1.5s infinite linear;
+    }
+    &__left {
+        transform: rotateY(-90deg) translateZ(calc(var.$sizes-cube / 2));
+    }
+    &__right {
+        transform: rotateY(90deg) translateZ(calc(var.$sizes-cube / 2));
+    }
+    &__front {
+        transform: translateZ(calc(var.$sizes-cube / 2));
+    }
+    &__back {
+        transform: rotateY(-180deg) translateZ(calc(var.$sizes-cube / 2));
+    }
+}

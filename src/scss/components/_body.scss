@@ -1,0 +1,12 @@
+@use '../var';
+
+body{
+    background-color: var.$background-black;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 75px; */
+    perspective: 20rem;
+    perspective-origin: 50% calc(50%);
+}

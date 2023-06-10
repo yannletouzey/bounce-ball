@@ -1,0 +1,24 @@
+{
+  "name": "bounce-ball",
+  "version": "1.0.0",
+  "description": "Animation bounce ball on cube in persperctive scene",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel {src/*.html,src/**/*.html}",
+    "build": "parcel build {src/*.html,src/**/*.html}",
+    "clear": "rm -rf .parcel-cache dist"
+  },
+  "keywords": [
+    "Animation",
+    "css",
+    "Animation",
+    "ball",
+    "css"
+  ],
+  "author": "Yann Letouzey",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  }
+}

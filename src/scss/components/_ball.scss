@@ -1,0 +1,18 @@
+@use '../var';
+@use './animation';
+
+.ball{
+    position: absolute;
+    width: calc(var.$sizes-cube / 2);
+    height: calc(var.$sizes-cube / 2);
+    border-radius: 50%;
+    background-color: var.$color-ball;
+    bottom: calc(var.$sizes-cube / 2);
+    left: -1rem;
+    background-image: radial-gradient(circle at top, var.$color-ball, #000); 
+    animation:  
+        bounce var.$bounceTime infinite ease-out, 
+        rotate var.$rotateTime linear infinite reverse
+    ;
+    
+}
